@@ -1,0 +1,18 @@
+# Base components
+npx shadcn@latest add button input card dialog
+
+# Forms
+npx shadcn@latest add form
+# (Already includes React Hook Form + Zod)
+
+
+# For Tables
+## Install the base Table component
+npx shadcn@latest add table
+
+## Install TanStack Table library
+npm install @tanstack/react-table
+
+## Install other components you'll need for the data table
+npx shadcn@latest add dropdown-menu
+npx shadcn@latest add checkbox

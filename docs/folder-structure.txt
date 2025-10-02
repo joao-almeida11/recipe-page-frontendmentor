@@ -1,0 +1,29 @@
+src/
+├── app/ # Next.js routes
+│ ├── (auth)/ # Route groups for organization
+│ ├── (dashboard)/
+│ └── api/
+│
+├── components/
+│ ├── ui/ # shadcn components (Button, Input, Card)
+│ └── layout/ # Layout components (Header, Sidebar, Footer)
+│
+├── features/ # Feature-based organization
+│ └── [feature-name]/
+│ ├── components/ # Feature-specific components
+│ ├── actions/ # Server actions
+│ ├── schemas/ # Zod validation schemas
+│ └── utils/ # Feature utilities
+│
+├── lib/
+│ ├── utils.ts # cn() helper, shared utilities
+│ └── auth/ # Auth config
+│
+├── hooks/ # Custom React hooks
+│ └── use-debounce.ts
+│
+├── stores/ # State management (Zustand)
+│ └── dashboard-store.ts
+│
+└── types/ # TypeScript types
+└── index.ts
