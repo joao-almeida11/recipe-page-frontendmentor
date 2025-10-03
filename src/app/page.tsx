@@ -3,13 +3,26 @@ import RecipePreparation from "@/components/molecules/RecipePreparation";
 import RecipeIngredients from "@/components/molecules/RecipeIngredients";
 import RecipeInstructions from "@/components/molecules/RecipeInstructions";
 import RecipeNutrition from "@/components/molecules/RecipeNutrition";
-import { ListItem } from "@/components/atoms/List";
+import { ListItem, ListItemPreparation } from "@/components/atoms/List";
+import LineBreak from "@/components/atoms/LineBreak";
 
 export default function Home() {
-  const preparation: ListItem[] = [
-    { id: "total", content: "Total: Approximately 10 minutes" },
-    { id: "prep", content: "Preparation: 5 minutes" },
-    { id: "cook", content: "Cooking: 5 minutes" },
+  const preparation: ListItemPreparation[] = [
+    {
+      id: "total",
+      label: "Total",
+      content: ": Approximately 10 minutes",
+    },
+    {
+      id: "prep",
+      label: "Preparation",
+      content: ": 5 minutes",
+    },
+    {
+      id: "cook",
+      label: "Cooking",
+      content: ": 5 minutes",
+    },
   ];
 
   const ingredients: ListItem[] = [
@@ -56,19 +69,25 @@ export default function Home() {
   ];
 
   return (
-    <section className="max-w-3xl mx-auto p-6 sm:p-10 space-y-8">
-      <RecipeHeader
-        title="Simple Omelette Recipe"
-        description="An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats."
-        imageSrc="/assets/images/image-omelette.jpeg"
-        imageAlt="Delicious omelette"
-        caption="A simple omelette, ready to serve."
-      />
+    <div className="sm:p-6 sm:mx-12 sm:my-32 ">
+      <section className="mx-auto max-w-3xl p-6 sm:p-10 bg-white sm:rounded-3xl">
+        <RecipeHeader
+          title="Simple Omelette Recipe"
+          description="An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats."
+          imageSrc="/assets/images/image-omelette.jpeg"
+          imageAlt="Delicious omelette"
+          caption="A simple omelette, ready to serve."
+        />
+        <RecipePreparation items={preparation} />
+        <RecipeIngredients items={ingredients} />
 
-      <RecipePreparation items={preparation} />
-      <RecipeIngredients items={ingredients} />
-      <RecipeInstructions items={instructions} />
-      <RecipeNutrition items={nutrition} />
-    </section>
+        <LineBreak />
+
+        <RecipeInstructions items={instructions} />
+        <LineBreak />
+
+        <RecipeNutrition items={nutrition} />
+      </section>
+    </div>
   );
 }

@@ -6,11 +6,15 @@ type RecipeIngredientsProps = {
   items: ListItem[];
 };
 
-export default function RecipeIngredients({ items }: RecipeIngredientsProps) {
+export default function RecipeIngredients({
+  items,
+}: Readonly<RecipeIngredientsProps>) {
   return (
-    <section>
-      <Heading level={2}>Ingredients</Heading>
+    <div>
+      <Heading level={2} preset="2">
+        Ingredients
+      </Heading>
       <List items={items} />
-    </section>
+    </div>
   );
 }

@@ -17,9 +17,9 @@ export default function RecipeHeader({
   imageSrc,
   imageAlt,
   caption,
-}: RecipeHeaderProps) {
+}: Readonly<RecipeHeaderProps>) {
   return (
-    <header className="space-y-4">
+    <header className="space-y-4 flex flex-col gap-8">
       <ImageFigure
         src={imageSrc}
         alt={imageAlt}
@@ -27,8 +27,12 @@ export default function RecipeHeader({
         width={600}
         height={400}
       />
-      <Heading level={1}>{title}</Heading>
-      <Text preset="4">{description}</Text>
+      <div>
+        <Heading level={1} preset="1">
+          {title}
+        </Heading>
+        <Text preset="4">{description}</Text>
+      </div>
     </header>
   );
 }

@@ -19,6 +19,9 @@ const youngSerif = Young_Serif({
 export const metadata: Metadata = {
   title: "recipe",
   description: "Recipe Page challenge",
+  icons: {
+    icon: "/assets/images/favicon-32x32.png",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} ${youngSerif.variable} antialiased`}>
+      <body
+        className={`${outfit.variable} ${youngSerif.variable} antialiased  --stone-100 bg-stone-100 min-h-screen min-w-screen`}
+      >
         {children}
       </body>
     </html>

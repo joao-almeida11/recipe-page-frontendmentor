@@ -7,8 +7,14 @@ export type ListItem = {
   content: React.ReactNode;
 };
 
+export type ListItemPreparation = {
+  id: string | number;
+  content: React.ReactNode;
+  label: string;
+};
+
 type ListProps = {
-  items: ListItem[];
+  items: ListItem[] | ListItemPreparation[];
   type?: "ul" | "ol";
   preset?: "1" | "2" | "3" | "4" | "4-bold";
   spacing?: string;
@@ -30,36 +36,39 @@ export default function List({
   const Tag: ElementType = CustomTag || type;
 
   return (
-    <Tag className={clsx("list-inside", className)} {...props}>
-      {items.map((item) => (
-        <li key={item.id} className={clsx(spacing, itemClassName)}>
-          <Text preset={preset}>{item.content}</Text>
-        </li>
-      ))}
+    <Tag className={clsx("list-inside", "list-disc", className)} {...props}>
+      {items.map((item) => {
+        if ("label" in item) {
+          return (
+            <li
+              key={item.id}
+              className={clsx(
+                spacing,
+                itemClassName,
+                "flex flex-row flex-wrap",
+              )}
+            >
+              <span className="text-2xl text-rose-800 leading-none mr-4">
+                •
+              </span>
+              <Text preset={preset} className="font-bold">
+                {item.label}
+              </Text>
+              <Text preset={preset}>{item.content}</Text>
+            </li>
+          );
+        }
+
+        return (
+          <li
+            key={item.id}
+            className={clsx(spacing, itemClassName, "flex flex-row flex-wrap")}
+          >
+            <span className="text-2xl text-rose-800 leading-none mr-4">•</span>
+            <Text preset={preset}>{item.content}</Text>
+          </li>
+        );
+      })}
     </Tag>
   );
-}
-
-// example usage
-{
-  /* <List
-  type="ul"
-  preset="4"
-  items={[
-    { id: "eggs", content: "2-3 large eggs" },
-    { id: "salt", content: "Salt, to taste" },
-    { id: "pepper", content: "Pepper, to taste" },
-  ]}
-/>
-
-<List
-  type="ol"
-  preset="4-bold"
-  items={[
-    { id: 1, content: "Beat the eggs" },
-    { id: 2, content: "Heat the pan" },
-    { id: 3, content: "Cook the omelette" },
-    { id: 4, content: "Add fillings" },
-  ]}
-/> */
 }

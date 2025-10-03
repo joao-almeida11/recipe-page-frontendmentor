@@ -10,6 +10,7 @@ type TextProps = {
 
 export default function Text({
   children,
+  color = "text-stone-600",
   preset = "4",
   as: Tag = "p", // <-- rename 'as' to 'Tag' while destructuring
   className,
@@ -18,17 +19,8 @@ export default function Text({
   const presetClass = `text-preset-${preset}`;
 
   return (
-    <Tag className={clsx(presetClass, className)} {...props}>
+    <Tag className={clsx(presetClass, color, className)} {...props}>
       {children}
     </Tag>
   );
-}
-
-// example usage
-{
-  /* <Text preset="4">Regular paragraph</Text>
-<Text as="span" preset="4-bold" className="text-rose-800">
-  Highlighted inline text
-</Text>
-<Text as="li" preset="4">List item text</Text> */
 }

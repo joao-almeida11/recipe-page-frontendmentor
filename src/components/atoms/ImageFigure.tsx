@@ -1,4 +1,3 @@
-// components/atoms/ImageFigure.tsx
 import Image, { ImageProps } from "next/image";
 import { ReactNode } from "react";
 import clsx from "clsx";
@@ -23,7 +22,10 @@ export default function ImageFigure({
       <Image
         src={src}
         alt={alt}
-        className={clsx("rounded-md", imageClassName)}
+        unoptimized // because its a static website
+        priority // <--- makes this image load immediately
+        fetchPriority="high" // hint to browser that this is high priority
+        className={clsx("rounded-2xl w-full max-w-full h-auto", imageClassName)}
         {...imageProps}
       />
       {caption && (
@@ -33,23 +35,4 @@ export default function ImageFigure({
       )}
     </figure>
   );
-}
-
-// example usage
-{
-  /* <ImageFigure
-  src="/images/image-omelette.jpeg"
-  alt="Delicious omelette"
-  caption="A simple omelette, ready to serve."
-  width={400}
-  height={300}
-/>
-
-<ImageFigure
-  src="/images/logo.png"
-  alt="Logo"
-  width={120}
-  height={120}
-  imageClassName="shadow-lg"
-/> */
 }
