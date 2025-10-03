@@ -17,7 +17,7 @@ export default function RecipeHeader({
   imageSrc,
   imageAlt,
   caption,
-}: RecipeHeaderProps) {
+}: Readonly<RecipeHeaderProps>) {
   return (
     <header className="space-y-4 flex flex-col gap-8">
       <ImageFigure

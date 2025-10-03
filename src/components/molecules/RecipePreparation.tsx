@@ -6,7 +6,9 @@ type RecipePreparationProps = {
   items: ListItemPreparation[];
 };
 
-export default function RecipePreparation({ items }: RecipePreparationProps) {
+export default function RecipePreparation({
+  items,
+}: Readonly<RecipePreparationProps>) {
   return (
     <div className="bg-rose-50 rounded-xl p-6 my-6">
       <Heading as="p" level={2} preset="3" color="rose-800" className="pb-4">

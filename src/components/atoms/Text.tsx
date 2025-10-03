@@ -24,12 +24,3 @@ export default function Text({
     </Tag>
   );
 }
-
-// example usage
-{
-  /* <Text preset="4">Regular paragraph</Text>
-<Text as="span" preset="4-bold" className="text-rose-800">
-  Highlighted inline text
-</Text>
-<Text as="li" preset="4">List item text</Text> */
-}

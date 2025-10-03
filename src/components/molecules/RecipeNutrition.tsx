@@ -12,7 +12,9 @@ type RecipeNutritionProps = {
   items: NutritionItem[];
 };
 
-export default function RecipeNutrition({ items }: RecipeNutritionProps) {
+export default function RecipeNutrition({
+  items,
+}: Readonly<RecipeNutritionProps>) {
   return (
     <div>
       <Heading level={2}>Nutrition</Heading>

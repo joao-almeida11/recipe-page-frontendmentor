@@ -6,7 +6,9 @@ type RecipeIngredientsProps = {
   items: ListItem[];
 };
 
-export default function RecipeIngredients({ items }: RecipeIngredientsProps) {
+export default function RecipeIngredients({
+  items,
+}: Readonly<RecipeIngredientsProps>) {
   return (
     <div>
       <Heading level={2} preset="2">

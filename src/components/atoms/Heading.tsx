@@ -1,4 +1,3 @@
-// components/atoms/Heading.tsx
 import { ReactNode, HTMLAttributes, ElementType } from "react";
 import clsx from "clsx";
 

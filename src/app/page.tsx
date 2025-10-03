@@ -69,23 +69,25 @@ export default function Home() {
   ];
 
   return (
-    <section className="min-h-screen  max-w-3xl p-6 sm:p-10 bg-white sm:my-32 sm:rounded-3xl mx-auto sm:mx-12">
-      <RecipeHeader
-        title="Simple Omelette Recipe"
-        description="An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats."
-        imageSrc="/assets/images/image-omelette.jpeg"
-        imageAlt="Delicious omelette"
-        caption="A simple omelette, ready to serve."
-      />
-      <RecipePreparation items={preparation} />
-      <RecipeIngredients items={ingredients} />
+    <div className="sm:p-6 sm:mx-12 sm:my-32 ">
+      <section className="mx-auto max-w-3xl p-6 sm:p-10 bg-white sm:rounded-3xl">
+        <RecipeHeader
+          title="Simple Omelette Recipe"
+          description="An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats."
+          imageSrc="/assets/images/image-omelette.jpeg"
+          imageAlt="Delicious omelette"
+          caption="A simple omelette, ready to serve."
+        />
+        <RecipePreparation items={preparation} />
+        <RecipeIngredients items={ingredients} />
 
-      <LineBreak />
+        <LineBreak />
 
-      <RecipeInstructions items={instructions} />
-      <LineBreak />
+        <RecipeInstructions items={instructions} />
+        <LineBreak />
 
-      <RecipeNutrition items={nutrition} />
-    </section>
+        <RecipeNutrition items={nutrition} />
+      </section>
+    </div>
   );
 }
