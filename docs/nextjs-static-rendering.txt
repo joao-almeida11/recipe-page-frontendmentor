@@ -1,0 +1,47 @@
+[From Claude]
+
+Static Rendering Options
+1. App Router - Static by Default
+In Next.js 15, pages in the App Router are static by default unless they use dynamic features.
+typescript// app/page.tsx - Already static by default
+export default function Page() {
+  return <div>This is statically rendered</div>
+}
+2. Force Static Export
+To ensure a page is always static, use the dynamic route segment config:
+typescript// app/page.tsx
+export const dynamic = 'force-static'
+
+export default function Page() {
+  return <div>Forced static rendering</div>
+}
+3. Static Site Generation (SSG) with Data
+For pages that fetch data at build time:
+typescript// app/blog/[slug]/page.tsx
+export const dynamic = 'force-static'
+export const dynamicParams = false // Return 404 for non-generated paths
+
+// Generate static paths at build time
+export async function generateStaticParams() {
+  const posts = await getPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const post = await getPost(params.slug)
+  return <article>{post.content}</article>
+}
+4. Full Static Export
+To export your entire app as static HTML (for hosting on any static server):
+javascript// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+}
+
+module.exports = nextConfig
+Then run:
+bashnpm run build
+This creates an out folder with static HTML files.

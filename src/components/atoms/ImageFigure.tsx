@@ -22,6 +22,9 @@ export default function ImageFigure({
       <Image
         src={src}
         alt={alt}
+        unoptimized // because its a static website
+        priority // <--- makes this image load immediately
+        fetchPriority="high" // hint to browser that this is high priority
         className={clsx("rounded-2xl w-full max-w-full h-auto", imageClassName)}
         {...imageProps}
       />
