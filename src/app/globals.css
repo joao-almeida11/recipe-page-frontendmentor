@@ -178,26 +178,32 @@
     font-size: 40px;
     line-height: 100%;
     letter-spacing: 0;
+    font-family: var(--font-young-serif);
   }
   .text-preset-2 {
     font-size: 28px;
     line-height: 100%;
     letter-spacing: 0;
+    font-family: var(--font-young-serif);
   }
   .text-preset-3 {
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0;
+    font-weight: 600;
+    font-family: var(--font-outfit);
   }
   .text-preset-4 {
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0;
+    font-family: var(--font-outfit);
   }
   .text-preset-4-bold {
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: var(--font-outfit);
   }
 }

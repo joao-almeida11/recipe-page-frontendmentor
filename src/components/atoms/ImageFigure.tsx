@@ -23,7 +23,7 @@ export default function ImageFigure({
       <Image
         src={src}
         alt={alt}
-        className={clsx("rounded-md", imageClassName)}
+        className={clsx("rounded-2xl w-full max-w-full h-auto", imageClassName)}
         {...imageProps}
       />
       {caption && (

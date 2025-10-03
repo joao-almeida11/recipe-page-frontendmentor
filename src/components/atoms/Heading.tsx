@@ -2,52 +2,44 @@
 import { ReactNode, HTMLAttributes, ElementType } from "react";
 import clsx from "clsx";
 
+type TextPreset = "1" | "2" | "3" | "4" | "4-bold";
+
 type HeadingProps = {
-  level?: 1 | 2 | 3 | 4 | 5 | 6; // default h2
+  level?: 1 | 2 | 3 | 4 | 5 | 6; // semantic heading tag
   children: ReactNode;
-  size?: "xl" | "lg" | "md" | "sm"; // optional size override
-  color?: string; // optional color override
-  as?: ElementType; // allows custom wrapper
+  color?: string;
+  preset?: TextPreset; // design system text preset
+  as?: ElementType; // override tag if needed
   className?: string;
 } & HTMLAttributes<HTMLElement>;
 
 export default function Heading({
   level = 2,
   children,
-  size,
-  color = "text-foreground",
+  color = "brown-800",
+  preset = "2", // default preset if none provided
   as: CustomTag,
   className,
   ...props
 }: HeadingProps) {
-  // Use the custom tag if provided, otherwise default to h1-h6
+  // Decide which tag to render
   const Tag: ElementType = CustomTag || (`h${level}` as ElementType);
 
-  const defaultSizeMap: Record<number, string> = {
-    1: "text-4xl font-bold",
-    2: "text-3xl font-semibold",
-    3: "text-2xl font-semibold",
-    4: "text-xl font-medium",
-    5: "text-lg font-medium",
-    6: "text-base font-medium",
+  const colorMap: Record<string, string> = {
+    "brown-800": "text-brown-800",
   };
-
-  const sizeMap: Record<string, string> = {
-    xl: "text-4xl font-bold",
-    lg: "text-3xl font-semibold",
-    md: "text-2xl font-medium",
-    sm: "text-base font-medium",
-  };
-
-  const headingClasses = clsx(
-    "font-sans",
-    color,
-    size ? sizeMap[size] : defaultSizeMap[level],
-    className,
-  );
 
   return (
-    <Tag className={headingClasses} {...props}>
+    <Tag
+      className={clsx(
+        "font-sans",
+        `text-preset-${preset}`,
+        colorMap[color],
+        "pb-6",
+        className,
+      )}
+      {...props}
+    >
       {children}
     </Tag>
   );

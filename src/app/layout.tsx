@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} ${youngSerif.variable} antialiased`}>
+      <body
+        className={`${outfit.variable} ${youngSerif.variable} antialiased  --stone-100 bg-stone-100`}
+      >
         {children}
       </body>
     </html>
