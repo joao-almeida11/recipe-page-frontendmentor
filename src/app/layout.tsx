@@ -19,6 +19,9 @@ const youngSerif = Young_Serif({
 export const metadata: Metadata = {
   title: "recipe",
   description: "Recipe Page challenge",
+  icons: {
+    icon: "/assets/images/favicon-32x32.png",
+  },
 };
 
 export default function RootLayout({
