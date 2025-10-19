@@ -5,6 +5,7 @@ import RecipeInstructions from "@/components/molecules/RecipeInstructions";
 import RecipeNutrition from "@/components/molecules/RecipeNutrition";
 import { ListItem, ListItemPreparation } from "@/components/atoms/List";
 import LineBreak from "@/components/atoms/LineBreak";
+import Attribution from "@/components/atoms/Attribution";
 
 export default function Home() {
   const preparation: ListItemPreparation[] = [
@@ -69,25 +70,30 @@ export default function Home() {
   ];
 
   return (
-    <main className="sm:p-6 md:p-0 sm:mx-12 sm:my-32">
-      <section className="mx-auto max-w-3xl p-6 sm:p-10 bg-white sm:rounded-3xl">
-        <RecipeHeader
-          title="Simple Omelette Recipe"
-          description="An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats."
-          imageSrc="./assets/images/image-omelette.jpeg"
-          imageAlt="Delicious omelette"
-          caption="A simple omelette, ready to serve."
-        />
-        <RecipePreparation items={preparation} />
-        <RecipeIngredients items={ingredients} />
+    <>
+      <main className="sm:p-6 md:p-0 sm:mx-12 sm:my-32">
+        <section className="mx-auto max-w-3xl p-6 sm:p-10 bg-white sm:rounded-3xl">
+          <RecipeHeader
+            title="Simple Omelette Recipe"
+            description="An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats."
+            imageSrc="./assets/images/image-omelette.jpeg"
+            imageAlt="Delicious omelette"
+            caption="A simple omelette, ready to serve."
+          />
+          <RecipePreparation items={preparation} />
+          <RecipeIngredients items={ingredients} />
 
-        <LineBreak />
+          <LineBreak />
 
-        <RecipeInstructions items={instructions} />
-        <LineBreak />
+          <RecipeInstructions items={instructions} />
+          <LineBreak />
 
-        <RecipeNutrition items={nutrition} />
-      </section>
-    </main>
+          <RecipeNutrition items={nutrition} />
+        </section>
+      </main>
+      <footer>
+        <Attribution />
+      </footer>
+    </>
   );
 }

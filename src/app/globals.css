@@ -110,6 +110,9 @@
   --brown-800: #854632;
   --white: #ffffff;
 
+  /* for the footer */
+  --color-attribution: #657cdd;
+
   /* --rose-800: oklch(0.215 0.347 338.3);
   --rose-50: oklch(0.98 0.027 343.2);
   --stone-900: oklch(0.188 0.037 30);
@@ -206,4 +209,14 @@
     font-weight: 700;
     font-family: var(--font-outfit);
   }
+}
+
+.attribution {
+  font-size: clamp(0.65rem, 2vw + 0.6rem, 0.8rem);
+  text-align: center;
+  color: var(--black);
+  padding: 1rem 0;
+}
+.attribution a {
+  color: var(--color-attribution);
 }
