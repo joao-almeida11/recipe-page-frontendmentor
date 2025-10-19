@@ -1,12 +1,12 @@
 self.__BUILD_MANIFEST = {
   "/_error": [
-    "./static/chunks/363ebc7721267c2d.js"
+    "./static/chunks/a778a53f74a29b58.js"
   ],
   "__rewrites": {
     "afterFiles": [],
     "beforeFiles": [
       {
-        "source": "/.//_next/:path+",
+        "source": "/recipe-page-frontendmentor//_next/:path+",
         "destination": "/recipe-page-frontendmentor/_next/:path+"
       }
     ],
