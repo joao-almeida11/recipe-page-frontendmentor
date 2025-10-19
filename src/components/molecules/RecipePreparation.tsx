@@ -1,9 +1,9 @@
 // components/molecules/RecipePreparation.tsx
 import Heading from "@/components/atoms/Heading";
-import List, { ListItemPreparation } from "@/components/atoms/List";
+import List, { ListItem } from "@/components/atoms/List";
 
 type RecipePreparationProps = {
-  items: ListItemPreparation[];
+  items: ListItem[];
 };
 
 export default function RecipePreparation({
