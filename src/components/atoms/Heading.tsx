@@ -28,6 +28,9 @@ export default function Heading({
     "brown-800": "text-brown-800",
   };
 
+  // Conditionally add aria-level if using a custom tag
+  const ariaProps = CustomTag ? { "aria-level": level, role: "heading" } : {};
+
   return (
     <Tag
       className={clsx(
@@ -37,6 +40,7 @@ export default function Heading({
         "pb-6",
         className,
       )}
+      {...ariaProps}
       {...props}
     >
       {children}
