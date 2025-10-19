@@ -5,16 +5,11 @@ import Text from "./Text";
 export type ListItem = {
   id: string | number;
   content: React.ReactNode;
-};
-
-export type ListItemPreparation = {
-  id: string | number;
-  content: React.ReactNode;
-  label: string;
+  label?: string;
 };
 
 type ListProps = {
-  items: ListItem[] | ListItemPreparation[];
+  items: ListItem[];
   type?: "ul" | "ol";
   preset?: "1" | "2" | "3" | "4" | "4-bold";
   spacing?: string;
@@ -35,26 +30,37 @@ export default function List({
 }: ListProps) {
   const Tag: ElementType = CustomTag || type;
 
+  const isOrdered = type === "ol";
+
   return (
-    <Tag className={clsx("list-inside", "list-disc", className)} {...props}>
-      {items.map((item) => {
+    <Tag className={clsx("list-none", className)} {...props}>
+      {items.map((item, index) => {
+        const marker = isOrdered ? `${index + 1}.` : "•";
+
         if ("label" in item) {
           return (
             <li
               key={item.id}
-              className={clsx(
-                spacing,
-                itemClassName,
-                "flex flex-row flex-wrap",
-              )}
+              className={clsx(spacing, itemClassName, "flex items-start")}
             >
-              <span className="text-2xl text-rose-800 leading-none mr-4">
-                •
+              <span
+                className={clsx(
+                  "text-brown-800 mr-4",
+                  "text-preset-4-bold",
+                  "leading-none",
+                )}
+              >
+                {marker}
               </span>
-              <Text preset={preset} className="font-bold">
-                {item.label}
-              </Text>
-              <Text preset={preset}>{item.content}</Text>
+              <div className="inline">
+                <Text preset={preset} className="font-bold inline">
+                  {item.label}
+                </Text>
+                {": "}
+                <Text preset={preset} className="inline">
+                  {item.content}
+                </Text>
+              </div>
             </li>
           );
         }
@@ -62,9 +68,17 @@ export default function List({
         return (
           <li
             key={item.id}
-            className={clsx(spacing, itemClassName, "flex flex-row flex-wrap")}
+            className={clsx(spacing, itemClassName, "flex items-start")}
           >
-            <span className="text-2xl text-rose-800 leading-none mr-4">•</span>
+            <span
+              className={clsx(
+                "text-brown-800 mr-4",
+                "text-preset-4-bold",
+                "leading-none",
+              )}
+            >
+              {marker}
+            </span>
             <Text preset={preset}>{item.content}</Text>
           </li>
         );

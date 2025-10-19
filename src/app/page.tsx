@@ -3,26 +3,26 @@ import RecipePreparation from "@/components/molecules/RecipePreparation";
 import RecipeIngredients from "@/components/molecules/RecipeIngredients";
 import RecipeInstructions from "@/components/molecules/RecipeInstructions";
 import RecipeNutrition from "@/components/molecules/RecipeNutrition";
-import { ListItem, ListItemPreparation } from "@/components/atoms/List";
+import { ListItem } from "@/components/atoms/List";
 import LineBreak from "@/components/atoms/LineBreak";
 import Attribution from "@/components/atoms/Attribution";
 
 export default function Home() {
-  const preparation: ListItemPreparation[] = [
+  const preparation: ListItem[] = [
     {
       id: "total",
       label: "Total",
-      content: ": Approximately 10 minutes",
+      content: "Approximately 10 minutes",
     },
     {
       id: "prep",
       label: "Preparation",
-      content: ": 5 minutes",
+      content: "5 minutes",
     },
     {
       id: "cook",
       label: "Cooking",
-      content: ": 5 minutes",
+      content: "5 minutes",
     },
   ];
 
@@ -41,32 +41,46 @@ export default function Home() {
   const instructions: ListItem[] = [
     {
       id: 1,
+      label: "Beat the eggs",
       content:
-        "Beat the eggs with a pinch of salt and pepper. Add a tablespoon of water or milk for fluffiness.",
+        "In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.",
     },
     {
       id: 2,
-      content: "Heat a non-stick pan over medium heat and add butter or oil.",
+      label: "Heat the pan",
+      content:
+        "Place a non-stick frying pan over medium heat and add butter or oil.",
     },
-    { id: 3, content: "Pour in the eggs, tilting the pan to coat evenly." },
+    {
+      id: 3,
+      label: "Cook the omelette",
+      content:
+        "Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.",
+    },
     {
       id: 4,
+      label: "Add fillings (optional)",
       content:
-        "When edges start to set but center is still runny, add fillings on one half.",
+        "When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.",
     },
     {
       id: 5,
+      label: "Fold and serve",
       content:
-        "Fold the omelette and cook for another minute, then slide onto a plate.",
+        "As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.",
     },
-    { id: 6, content: "Serve hot, with additional salt and pepper if needed." },
+    {
+      id: 6,
+      label: "Enjoy",
+      content: "Serve hot, with additional salt and pepper if needed.",
+    },
   ];
 
   const nutrition = [
     { id: "calories", label: "Calories", value: "277 kcal" },
     { id: "carbs", label: "Carbs", value: "0 g" },
-    { id: "protein", label: "Protein", value: "18 g" },
-    { id: "fat", label: "Fat", value: "20 g" },
+    { id: "protein", label: "Protein", value: "20 g" },
+    { id: "fat", label: "Fat", value: "22 g" },
   ];
 
   return (
