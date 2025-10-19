@@ -69,7 +69,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="sm:p-6 md:p-0 sm:mx-12 sm:my-32">
+    <main className="sm:p-6 md:p-0 sm:mx-12 sm:my-32">
       <section className="mx-auto max-w-3xl p-6 sm:p-10 bg-white sm:rounded-3xl">
         <RecipeHeader
           title="Simple Omelette Recipe"
@@ -88,6 +88,6 @@ export default function Home() {
 
         <RecipeNutrition items={nutrition} />
       </section>
-    </div>
+    </main>
   );
 }

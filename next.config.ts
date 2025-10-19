@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-  /* config options here */
   output: "export",
-  basePath: "/recipe-page-frontendmentor",
-  assetPrefix: "/recipe-page-frontendmentor/",
+  basePath: isProd ? "/recipe-page-frontendmentor" : "",
+  assetPrefix: isProd ? "/recipe-page-frontendmentor/" : "",
 };
 
 export default nextConfig;

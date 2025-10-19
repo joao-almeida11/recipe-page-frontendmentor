@@ -101,23 +101,23 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /**** from the challenge */
-  /* --rose-800: #7a284e;
+  --rose-800: #7a284e;
   --rose-50: #fff7fb;
   --stone-900: #312e2c;
   --stone-600: #5f564d;
   --stone-150: #e3ddd7;
   --stone-100: #f3e5d7;
   --brown-800: #854632;
-  --white: #ffffff; */
+  --white: #ffffff;
 
-  --rose-800: oklch(0.215 0.347 338.3);
+  /* --rose-800: oklch(0.215 0.347 338.3);
   --rose-50: oklch(0.98 0.027 343.2);
   --stone-900: oklch(0.188 0.037 30);
   --stone-600: oklch(0.301 0.056 30.4);
   --stone-150: oklch(0.89 0.075 85.3);
   --stone-100: oklch(0.925 0.078 85.3);
   --brown-800: oklch(0.392 0.229 27.4);
-  --white: oklch(1 0 0);
+  --white: oklch(1 0 0); */
 
   --spacing-1600: 128px;
   --spacing-600: 48px;
