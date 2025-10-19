@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "recipe",
   description: "Recipe Page challenge",
   icons: {
-    icon: "/assets/images/favicon-32x32.png",
+    icon: "./assets/images/favicon-32x32.png",
   },
 };
 

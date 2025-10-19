@@ -74,7 +74,7 @@ export default function Home() {
         <RecipeHeader
           title="Simple Omelette Recipe"
           description="An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats."
-          imageSrc="/assets/images/image-omelette.jpeg"
+          imageSrc="./assets/images/image-omelette.jpeg"
           imageAlt="Delicious omelette"
           caption="A simple omelette, ready to serve."
         />
